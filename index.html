@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d6efd" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon.png" />
+  <title>LG AC Remote</title>
+</head>
+<body>
+  <main>
+    <h1>LG AC Remote</h1>
+    <div class="controls">
+      <button onclick="send('ac.power','on')">Power ON</button>
+      <button onclick="send('ac.power','off')">Power OFF</button>
+      <input type="number" id="temp" value="24" min="16" max="30" />
+      <button onclick="setTemp()">Set Temp</button>
+      <select onchange="setFan(this.value)">
+        <option value="">Fan Speed</option>
+        <option value="ac.fan_auto">Auto</option>
+        <option value="ac.fan_low">Low</option>
+        <option value="ac.fan_med">Medium</option>
+        <option value="ac.fan_high">High</option>
+      </select>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/mqtt/dist/mqtt.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
